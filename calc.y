@@ -35,7 +35,13 @@ statement : expr NL
 
 expr : NUM
      | expr ADD NUM
+            {
+              $$ = $1 + $3;
+            }
      | expr SUB NUM
+            {
+              $$ = $1 - $3;
+            }
      ;
 
 %%
